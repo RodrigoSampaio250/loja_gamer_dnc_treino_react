@@ -7,13 +7,13 @@ import { Carrinho } from './pages/Carrinho/Carrinho';
 import { Login } from './pages/Login/Login';
 import { Pay } from './pages/Pay/Pay';
 import { Produtos } from './pages/Produtos/Produtos';
-import { Home } from './sass/Home/Home';
+import { Home } from './pages/Home/Home';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login/>,
+    element: <Login />,
   },
   {
     path: "/home",
