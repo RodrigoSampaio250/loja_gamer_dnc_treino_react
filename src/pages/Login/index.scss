@@ -1,1 +1,88 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap");
+@use '../../sass/variables' as *;
+
+.login {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    nav{
+        background-color: $cor-primaria-site;
+        width: 100%;
+
+        img{
+           width: 150px;
+           padding: 20px; 
+        }
+    }
+
+    &__form {
+        margin-top: 5rem;
+        text-align: center;
+    }
+
+    h1 {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 35px;
+
+        color: #000000;
+    }
+
+    h2 {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 26px;
+        
+        color: #000000;
+    }
+
+    label {
+        text-align: left;
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    &__input-wrapper {
+        max-width: 524px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        margin-top: 84px;
+    }
+
+    &__input-name {
+        margin-bottom: 19px;
+    }
+
+    input {
+        height: 52px;
+        padding: 18px 13px;
+        border: 2px solid $cor-primaria-site;
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    button {
+        width: 524px;
+        margin-right: 10px;
+        border: none;
+        background-color: $cor-secundaria-site;
+        border-radius: 6px;
+        padding: 13px;
+        margin-top: 66px;
+        margin-bottom: 200px;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 21px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $branco;
+    }
+}
