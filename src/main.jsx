@@ -13,11 +13,11 @@ import { Home } from './pages/Home/Home';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <Home dados={mock}/>,
   },
   {
     path: "/home",
-    element: <Home dados={mock}/>,
+    element: <Login />,
   },
   {
     path: "/produto/:produtoId",

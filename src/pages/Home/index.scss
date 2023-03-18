@@ -1,1 +1,18 @@
 @use '../../sass/variables' as *;
+
+.home{
+    background-color: $cor-primaria-site;
+    &__propaganda{
+        width: 100%;
+    }
+
+    &__conteiner{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4ex;
+        grid-template-columns: repeat(3,1fr);
+        justify-items: center;
+        padding: 40px;
+    }
+}
