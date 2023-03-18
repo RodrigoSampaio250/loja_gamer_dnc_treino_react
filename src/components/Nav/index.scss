@@ -1,1 +1,52 @@
 @use '../../sass/variables' as *;
+
+.nav {
+    background-color: $cor-primaria-site;
+    padding: 15px 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__logo {
+        width: 100px;
+        height: 56px;
+        margin-top: 7px;
+        margin-right: 25px;
+    }
+
+    &__carrinho{
+        width: 85px;
+        margin-top: 5px;
+    }
+
+    ul{
+        display: flex;
+        // margin-left: 13%;
+        li{
+            color: $branco;
+            cursor: pointer;
+            padding: 25px 6.5ex;
+            list-style-type: none;
+        }
+    }
+
+    &__search-logo {
+        position: absolute;
+        left: 172px;
+        transform: translateY(95%);
+    }
+
+    &__cart-shop {
+        display: flex;
+        gap: 10px;
+    }
+
+    input {
+        padding-left: 45px;
+        margin-top: 12px;
+        height: 48px;
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid $cor-primaria-site;
+    }
+}
