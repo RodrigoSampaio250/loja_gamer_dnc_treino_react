@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './index.scss';
 import Nav from '../../components/Nav/Nav';
 import ProdutoCard from '../../components/ProdutoCard/ProdutoCard'
+import Footer from '../../components/Footer/Footer'
 
 export const Home = ({dados}) => {
   return (
@@ -14,6 +15,7 @@ export const Home = ({dados}) => {
           dados.map(produto => (<ProdutoCard key={produto.id} dados={produto}/>))
         }
       </div>
+      <Footer />
     </div>
   )
 }
