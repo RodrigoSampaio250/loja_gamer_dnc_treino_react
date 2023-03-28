@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import './index.scss';
 import { mock } from './mock/produtos.mock';
 import { Carrinho } from './pages/Carrinho/Carrinho';
-import { Login } from './pages/Login/Login';
+import  Login  from './pages/Login/Login';
 import { Pay } from './pages/Pay/Pay';
 import { Produtos } from './pages/Produtos/Produtos';
 import { Home } from './pages/Home/Home';
