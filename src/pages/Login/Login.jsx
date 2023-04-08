@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { redirect } from 'react-router-dom';
 import logo from "../../assets/DncDetalhe.svg";
 import { Link } from 'react-router-dom';
 import './index.scss';
@@ -10,6 +11,7 @@ const Login = () => {
   const [cpfError, setCpfError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [isConfirmed, setIsConfirmed] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const Login = () => {
 
     if (cpf.trim() === '') {
       setCpfError('Por favor, insira seu CPF.');
-      cpfValidSubmit= false;
+      cpfValidSubmit = false;
     } else if (!/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpf)) {
       setCpfError('Por favor, insira um CPF válido.');
       cpfValidSubmit = false;
@@ -34,15 +36,27 @@ const Login = () => {
     } else {
       setPasswordError('');
     }
+    
+    if (cpfValidSubmit && !cpfError) {
+      setCpfError('');
+    }
 
     if (cpfValidSubmit && passwordValidSubmit) {
-      //Simulação de chamada para um API de autenticação
+      setIsConfirmed(true);
       setTimeout(() => {
         setIsConfirmed(true);
         console.log('Login realizado com sucesso!');
+        setIsSubmitted(true);
+        history.push('/Home'); //redireciona para a página Home
       }, 2000);
+    } else {
+      setIsSubmitted(true);
     }
   };
+
+  if (isSubmitted && isConfirmed) {
+    return <Redirect to="/Home" />;
+  }
 
   return (
     <div>
@@ -74,7 +88,14 @@ const Login = () => {
             />
             {passwordError && <p className="login__error">{passwordError}</p>}
           </div>
-          <button type="submit">Entrar</button>
+          {isSubmitted && isConfirmed ? (
+            <Link to="/home">
+              <button>Entrar</button>
+            </Link>
+          ) : (
+            <button type="submit">Entrar</button>
+          )}
+
         </form>
         {isConfirmed && (
           <p>Login realizado com sucesso!</p>
