@@ -6,8 +6,10 @@ import { mock } from './mock/produtos.mock';
 import { Carrinho } from './pages/Carrinho/Carrinho';
 import  Login  from './pages/Login/Login';
 import { Pay } from './pages/Pay/Pay';
-import { Produtos } from './pages/Produtos/Produtos';
+
 import { Home } from './pages/Home/Home';
+import Produto from './pages/Produtos/Produto';
+
 
 
 const router = createBrowserRouter([
@@ -21,11 +23,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/produto/:produtoId",
-    element: <Produtos dados={mock}/>,
+    element: <Produto dados={mock}/>,
   },
+    
   {
     path: "/carrinho/:carrinhoId",
     element: <Carrinho dados={mock}/>,
+
   },
   {
     path: "/pay/:payId",

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.scss';
 import Nav from '../../components/Nav/Nav';
-import ProdutoCard from '../../components/ProdutoCard/ProdutoCard'
+ import ProdutoCard from '../../components/ProdutoCard/ProdutoCard'
 import Footer from '../../components/Footer/Footer'
 
 export const Home = ({dados}) => {

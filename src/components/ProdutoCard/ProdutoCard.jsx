@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+ import {Link} from 'react-router-dom';
 import './index.scss';
 
 export const ProdutoCard = ({dados}) => {
@@ -7,9 +7,10 @@ export const ProdutoCard = ({dados}) => {
     <div className='card'>
       <img src={dados.imagem} alt="model" />
       <div className='card__produto'>
-        <p>{dados.nome}</p>
-        <button>
+        <p>{dados.nome}</p> 
+         <button>
           <Link to={`/produto/${dados.id}`}>Ver Mais</Link>
+          
         </button>
       </div>
     </div>
