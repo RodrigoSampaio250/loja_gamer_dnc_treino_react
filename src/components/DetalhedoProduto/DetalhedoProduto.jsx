@@ -53,7 +53,11 @@ const DetalhedoProduto = ({dados}) => {
                                   </div> 
 
                   
-                              
+                                  <button className='Detalhedoproduto_direito_button'>
+                        <img src="../carrinhoDir.svg" alt="" width="20px" />
+                        <Link to={`/carrinho/${dados.id}`}> Adicionar ao Carrinho</Link>
+                        
+                        </button>
 
 
 
@@ -69,9 +73,9 @@ const DetalhedoProduto = ({dados}) => {
 
 
 
-    //
+    
 
-    // </div>
+     </div>
   )
 
 
