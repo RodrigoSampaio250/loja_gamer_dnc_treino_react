@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { redirect } from 'react-router-dom';
 import logo from "../../assets/DncDetalhe.svg";
 import { Link } from 'react-router-dom';
 import './index.scss';
@@ -47,17 +46,12 @@ const Login = () => {
         setIsConfirmed(true);
         console.log('Login realizado com sucesso!');
         setIsSubmitted(true);
-        history.push('/Home'); //redireciona para a página Home
+        history.push('/'); //redireciona para a página Home
       }, 2000);
     } else {
       setIsSubmitted(true);
     }
   };
-
-  if (isSubmitted && isConfirmed) {
-    return <Redirect to="/Home" />;
-  }
-
   return (
     <div>
       <section className="login">
@@ -88,8 +82,8 @@ const Login = () => {
             />
             {passwordError && <p className="login__error">{passwordError}</p>}
           </div>
-          {isSubmitted && isConfirmed ? (
-            <Link to="/home">
+          {isSubmitted ? (
+            <Link to={`/Home/`}>
               <button>Entrar</button>
             </Link>
           ) : (
