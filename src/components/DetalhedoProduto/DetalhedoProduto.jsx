@@ -21,7 +21,7 @@ const DetalhedoProduto = ({ dados }) => {
       <div className="Detalhedoproduto_direito">
         <div className="Detalhedoproduto_direito_nome">
           <h2>{dados.nome}</h2>
-          <h1>{dados.linha}</h1>
+          {/* <h1>{dados.linha}</h1> */}
         </div>
         <div className="Detalhedoproduto_direito_preco">
           <p>{dados.preco}</p>
@@ -54,10 +54,63 @@ const DetalhedoProduto = ({ dados }) => {
           ))}
         </div>
 
-        <button className="Detalhedoproduto_direito_button">
-          <img src="../carrinhoDir.svg" alt="" width="20px" />
-          <Link to={`/carrinho/${dados.id}`}> Adicionar ao Carrinho</Link>
+        
+
+        <button
+          className="Detalhedoproduto_direito_button"
+          type="button"
+          onClick={() => {
+            console.log("click");
+            {
+              {
+                modal.style.display = "block";
+              }
+            }
+          }}
+        >
+          
+          Adicionar ao Carrinho
         </button>
+      </div>
+      <div id="modal">
+        <div id="modal_content">
+          <div className="left">
+            <img  src={dados.imagem} alt="" style= {{marginTop:"10%"}}/>
+          </div>
+          <div className="right">
+            <h2>Meu Carrinho</h2>
+
+            <h1>{dados.nome}</h1>            
+
+            <p id="preco">{dados.preco}</p>
+
+            <h5>cor: {dados.cor}</h5>
+
+            <div className="Detalhedoproduto__cubocor">
+              {dados.cor.map((cor) => (
+                <div
+                  style={{
+                    width: "40px",
+                    height: "35px",
+                    borderRadius: "10px",
+                    backgroundColor: cor,
+                    border: "none ",
+                  }}
+                >
+                  {" "}
+                </div>
+              ))}
+            </div>
+               <div className="botoes">   
+            <button className="botoes_one">
+              <Link to={`/home/`}> Continuar Comprando</Link>
+            </button>
+            <button className="botoes_one" style= {{backgroundColor:" rgba(103, 103, 103, 1) "}} >
+              <Link to={`/pay/${dados.id}`}> Finalizar Compra</Link>
+            </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
